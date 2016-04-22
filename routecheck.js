@@ -13,12 +13,7 @@ window.onload = function () {
         }
     }
     function getRoute(sIP, dIP) {
-        $.ajax({
-            url:'http://10.0.2.15:8080/wm/staticflowpusher/list/all/json',
-            success:function( data ){
-                console.log( data );
-            }
-        });
+        
         return "test";
     }
     function render(sIP, dIP, rst) {
@@ -33,6 +28,9 @@ window.onload = function () {
             alert("输入无效！");
             return;
         }
+        $.getJSON("http://10.0.2.15:8080/wm/staticflowpusher/list/all/json", function(data) {
+            console.log(data);
+        });
         var rst = getRoute(sIP, dIP);
         render(sIP, dIP, rst);
     });
