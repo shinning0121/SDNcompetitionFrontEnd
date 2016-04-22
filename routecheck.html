@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>路由检查</title>
+  <style type="text/css">
+    .clearfix {
+      overflow: auto;
+      zoom: 1;
+    }
+    body{
+      font-family: "黑体";
+      font-size: 14px;
+      margin: 0px;
+      border: 0px;
+      background: #DEDEDE;
+      min-width: 750px;
+    }
+    .header{
+      height: 70px;
+      width: 100%;
+      background: #333333;
+      display: table;
+      vertical-align: middle;
+      text-align: center;
+    }
+    .header div{
+      display: table-cell;
+      vertical-align: middle;
+      height: 70px;
+      color: #FFF;
+      font-size: 40px;
+    }
+    article{
+      margin-top: 40px;
+      background-color: #FFF;
+      margin-left: 40px;
+      margin-right: 700px;
+      padding: 20px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      box-shadow: 2px 2px 2px #848484;
+    }
+    aside{
+      background: #fff;
+      float: right;
+      width: 600px;
+      margin-top: 40px;
+      margin-right: 20px;
+      padding: 20px;
+      box-shadow: 2px 2px 2px #848484;
+    }
+    #topo{
+      margin:0 auto;
+      text-align: center;
+    }
+    .color_gray{
+      color: gray;
+    }
+    .text_indent{
+      text-indent: 2em;
+    }
+    table{
+      width: 100%;
+      margin: 0 auto;
+      border-color: #ccc;
+      border-collapse:collapse;
+    }
+    thead{
+      color: white;
+      background: #333;
+    }
+    tfoot{
+      background: #ccc;
+    }
+    .aside{
+      padding-left: 10px;
+      border-left: 3px #ccc solid;
+    }
+    form{
+      width: 100%;
+      min-width: 300px;
+    }
+    form>div{
+      margin: 10px 0;
+    }
+    tfoot{
+      font-weight: bold;
+    }
+    .bot{
+      vertical-align: bottom;
+    }
+    .input_message{
+      width: 30%;
+      text-align: right;
+      display:inline-block;
+      margin-right: 20px;
+      margin-top: 10px;
+      vertical-align: top;
+      margin-bottom: 0px;
+    }
+    .input_messages{
+      width: 30%;
+      text-align: right;
+      display:inline-block;
+      margin-right: 10px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+    textarea{
+      margin-top: 10px;
+      width: 50%;
+      height: 100px;
+      margin-left: -7px;
+    }
+    input[type='submit']{
+      width: 50%;
+      height: 40px;
+      background: #3355D0;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+      border:1px solid #3355D0;
+      font-weight: 800;
+    }
+    .submit{
+      margin: 20px auto;
+      text-align: center;
+    }
+    footer{
+      width: 100%;
+      height: 60px;
+      text-align: center;
+      background: #000;
+      color: #fff;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 60px;
+      margin-bottom: 0;
+    }
+    .name{
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<header class="header">
+      <div>路由检查</div>
+</header>
+<aside>
+  <h3 class="aside" id="article_4">  查询路由输入栏</h3>
+  <form action="" method="post">
+    <div>
+      <div class="input_messages">请选择源IP地址：</div>
+      <select id="src">
+        <option value="10.0.0.3">10.0.0.3</option>
+        <option value="10.0.0.4">10.0.0.4</option>
+      </select>
+    </div>
+    <div>
+      <div class="input_messages">请选择目的IP地址：</div>
+      <select id="dst">
+        <option value="10.0.0.1">10.0.0.1</option>
+        <option value="10.0.0.2">10.0.0.2</option>
+      </select>
+    </div>
+    <div class="submit">
+      <input type="submit" id ="check" value="查询路由" />
+    </div>
+  </form>
+</aside>
+<article>
+  <header>
+    <h2 id="article_1">实验网络拓扑</h2>
+  <div id="topo"><img src="routecontrol.png" width="50%" alt="实验拓扑"/></div>
+  <header>
+    <h2 id="article_3">路由检查结果展示</h2>
+  </header>
+  <div > 
+    <table border="1" id="show">
+      <thead>
+      <tr>
+        <th align="left">源IP</th>
+        <th align="left">目的IP</th>
+        <th align="left">路由</th>
+      </tr>
+      </thead>
+    </table>
+  </div>
+</article>
+<script src="routecheck.js"></script>
+<footer>
+  <span>版权所有&copy; shinning<a class="name" href="#"> @超能陆战队</a></span>
+</footer>
+</body>
+</html>
